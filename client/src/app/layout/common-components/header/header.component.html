@@ -1,0 +1,29 @@
+
+<div class="toolbar sticky-toolbar" id="stickyToolbar">
+
+  <div class="content-toolbar">
+
+    <a class="icon-menu-movil" (click)="openedMenuResposive = !openedMenuResposive">
+      <fa-icon [icon]="faBars"></fa-icon>
+    </a>
+
+    <div class="options">
+
+      <a class="item-option" [routerLink]="['/cities-list']" routerLinkActive="active" >
+        <span>Cities List</span>
+      </a>
+
+      <a class="item-option" [routerLink]="['/device-summary']" routerLinkActive="active">
+        <span>Devices Summary</span>
+      </a>
+
+    </div>
+
+    <div class="spacer"></div>
+  </div>
+
+  <div class="options-menu-responsive" [ngStyle]="{'display': openedMenuResposive == true ? 'flex':'none'}">
+    <a class="item-m-r" [routerLink]="['/cities-list']" routerLinkActive="active">Cities List</a>
+    <a class="item-m-r" [routerLink]="['/device-summary']" routerLinkActive="active">Devices Summary</a>
+  </div>
+</div>

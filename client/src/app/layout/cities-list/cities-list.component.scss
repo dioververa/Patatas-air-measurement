@@ -1,0 +1,24 @@
+
+table {
+  width: 100%;
+}
+
+$container-margin: 100px;
+
+.flex-center-hv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-cities-list {
+	display: flex;
+	width: 100%;
+	margin: $container-margin auto;
+}
+
+.row-table-cities-list {
+  width: 90%;
+  margin: auto;
+  @extend .flex-center-hv;
+}

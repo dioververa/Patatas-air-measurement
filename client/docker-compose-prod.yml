@@ -1,0 +1,15 @@
+version: "2"
+services:
+  appClientBuildTekusV1:
+    container_name: cont_client_prod_tekus_v1
+#build: ./client
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    image: image_client_prod_tekus_v1
+    volumes:
+      - ./:/usr/src/app
+    command: >
+        bash -c "ng build --prod=true --aot=true --build--optimizer=true"
+#        bash -c "ng build --prod=true"
+#        bash -c "ng build --configuration="production"" 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table'
-import { CitiesListRoutingModule } from '../cities-list/cities-list-routing.module';
+import { DeviceSummaryRoutingModule } from './device-summary-routing.module';
 import { DeviceSummaryComponent } from './device-summary.component';
 
 
@@ -9,7 +9,7 @@ import { DeviceSummaryComponent } from './device-summary.component';
   declarations: [DeviceSummaryComponent],
   imports: [
     CommonModule,
-    CitiesListRoutingModule,
+    DeviceSummaryRoutingModule,
     MatTableModule
   ]
 })

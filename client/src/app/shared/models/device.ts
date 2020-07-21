@@ -1,6 +1,6 @@
 export interface Device {
   Id: string;
-  name: string;
+  Name: string;
   CityId: string;
   LastActivity: string;
   Temperature: number;

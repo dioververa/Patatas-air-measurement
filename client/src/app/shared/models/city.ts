@@ -1,6 +1,6 @@
 export interface City {
   Id: string;
-  name: string;
+  Name: string;
   Country: string;
   AlertDevicesCount: number;
   WarningDevicesCount: number;

@@ -1,0 +1,58 @@
+$container-margin: 100px;
+
+.container-device-summary {
+	display: flex;
+	width: 100%;
+  margin: $container-margin auto;
+  background-color: #eee;
+  
+  .row-table-device-summary{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    .box-device-summary {
+      min-width: 200px;
+      width: 30%;
+      margin: 10px auto;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      box-shadow: rgba(27, 20, 65, 0.1) 0px 10px 20px 0px;
+      background-color: #fff;
+      padding: 10px;
+
+      .row1-box-device-summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .row2-box-device-summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+}
+
+ .storm-level-box-device-summary {
+    font-size: 1.2rem;
+    color: rgb(87, 80, 80);
+    padding: 5px;
+}
+
+.indicator-air-quality-box-device-summary {
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  margin: auto;
+  margin-right: 10px;
+}
+

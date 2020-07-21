@@ -1,0 +1,33 @@
+<div class="container-device-summary">
+  <div class="row-table-device-summary">
+    <div class="box-device-summary" *ngFor="let device of devices; let j=index"
+    [style.border-color]="device.AirQualityColor">
+      <div class="row1-box-device-summary">
+        <div class="id-box-device-summary">
+          {{device.Id}}
+        </div>
+        <div class="wrapper-last-activity-box-device-summary">
+          <span class="indicator-air-quality-box-device-summary" 
+          [style.background]="device.AirQualityColor"></span>
+          <span class="last-activity-box-device-summary">{{device.LastActivity}}</span>
+        </div>
+        <div class="wrapper-temperature-box-device-summary">
+          <strong class="temperature-box-device-summary">{{device.Temperature}}</strong>
+        </div>
+      </div>
+      <div class="row2-box-device-summary">
+        <div class="wrapper-name-city-box-device-summary">
+          <div class="name-box-device-summary">
+            <strong>{{device.Name}}</strong>
+          </div>
+          <div class="city-box-device-summary">
+            {{device.NameCity}}
+          </div>
+        </div>
+        <div class="storm-level-box-device-summary">
+          <fa-icon [icon]="device.StormLevelIcon"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

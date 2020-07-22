@@ -16,7 +16,6 @@ export class PatatasApiService {
   }
 
   getCities() {
-    console.log('PatatasApiService getCities')
     return this.http.get<Array <City>>(`${this.urlBase}/cities`); 
   }
 

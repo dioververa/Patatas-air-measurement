@@ -2,7 +2,6 @@ version: "2"
 services:
   appClientBuildTekusV1:
     container_name: cont_client_build_tekus_v1
-#build: ./client
     build:
       context: .
       dockerfile: Dockerfile-build-client
@@ -10,7 +9,3 @@ services:
     volumes:
       - ./:/usr/src/app
     tty: true
-#    command: >
-#        bash -c "ng build --prod=true --aot=true --build--optimizer=true"
-#        bash -c "ng build --prod=true"
-#        bash -c "ng build --configuration="production"" 

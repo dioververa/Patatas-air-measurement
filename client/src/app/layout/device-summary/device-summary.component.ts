@@ -1,12 +1,11 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone, Output, ViewChild, OnDestroy, Renderer2, Inject, ChangeDetectionStrategy} from "@angular/core";
+import {AfterViewInit, ChangeDetectorRef, Component, OnDestroy, ChangeDetectionStrategy} from "@angular/core";
 
-import { ActivatedRoute, Router } from '@angular/router';
 import { PatatasApiService } from "../services/patatas-api.service";
 import { forkJoin } from "rxjs";
 import { map, take } from 'rxjs/operators';
 import { Device } from "../../shared/models/device";
 
-import { format, parseISO } from 'date-fns'
+import { parseISO } from 'date-fns'
 import { City } from "../../shared/models/city";
 import { faPooStorm, faRadiation, faCloudSun } from '@fortawesome/free-solid-svg-icons';
 import { differenceInHours } from "date-fns/esm";
@@ -51,6 +50,11 @@ export class DeviceSummaryComponent implements AfterViewInit, OnDestroy {
       this.patatasApiServ.getDevices()
     ]
 
+    /**
+     * ForkJoin is first used to retrieve the data from the observables in parallel,
+     * then filter is used to obtain only the data that is associated with a city. 
+     * Take is used to obtain only the first data of the stream and it is automatically unsubscribed.
+     */
     forkJoin(arrayForkJoin).pipe(
       take(1),
       map(([cities, devices]: [Array<City>, Array<Device>]) => {

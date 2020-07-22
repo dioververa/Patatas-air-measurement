@@ -1,0 +1,27 @@
+{
+  "name": "express-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "./node_modules/.bin/babel  ./server/ -d ./dist",
+    "serve": "node dist/index.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/runtime": "^7.7.7",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "request": "^2.88.0",
+    "serve-favicon": "~2.4.5",
+    "sloc": "^0.2.1",
+    "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.7.6"
+  }
+}

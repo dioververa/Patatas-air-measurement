@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: 'https://patatas-air.s3.amazonaws.com',
+  //apiEndpoint: 'https://patatas-air.s3.amazonaws.com',
+  apiEndpoint: 'http://localhost:3000/api/patatas',
 };
 
 /*

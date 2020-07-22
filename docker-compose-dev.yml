@@ -1,5 +1,21 @@
 version: "2"
 services:
+  appPatatasAirMeasurementServerDevV1:
+    container_name: cont_patatas_air_measurement_server_dev_v1
+    build:
+      context: .
+      dockerfile: Dockerfile-dev-server
+    image: image_patatas_air_measurement_server_dev_v1
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    tty: true
+    networks:
+      - app-network
+    command: >
+        bash -c "npm run build && npm run serve"
   appPatatasAirMeasurementClientDevV1:
     container_name: cont_patatas_air_measurement_client_dev_v1
     build:
@@ -15,28 +31,9 @@ services:
       - app-network
     command: >
         bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
-  appMongoV1:
-    container_name: cont_patatas_air_measurement_mongo_dev_v1
-    image: mongo
-    volumes:
-      - ./dbdata_dev/v1:/data/db
-    ports:
-      - "27017:27017"
-    networks:
-      - app-network
 networks:
   app-network:
     driver: bridge
 volumes:
-#  dbdata:
   node_modules:
-# working_dir: /code
-#volumes:
-#  certbot-etc:
-#  certbot-var:
-#  web-root:
-#    driver: local
-#    driver_opts:
-#      type: none
-#      device: /home/sammy/node_project/views/
-#      o: bind
+

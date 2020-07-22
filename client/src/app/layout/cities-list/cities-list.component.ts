@@ -14,6 +14,9 @@ export class CitiesListComponent implements OnInit {
   displayedColumns: string[] = ['city', 'alert', 'warning', 'normal'];
 
   constructor(private patatasApiServ: PatatasApiService) {
+
+    //render in table using async pipe subscribes to an Observable
+    //returned by the function getCities
     this.$dataSource = this.patatasApiServ.getCities();
   }
 

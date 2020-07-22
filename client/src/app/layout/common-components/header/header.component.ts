@@ -2,8 +2,7 @@ import { Component, OnInit, Output, EventEmitter, OnDestroy, ElementRef, Input, 
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { map } from 'rxjs/operators';
+import { faBars, faLanguage } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-header',
@@ -13,22 +12,27 @@ import { map } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
-    faBars = faBars;
-    openedMenuResposive = false;
+  faBars = faBars;
+  faLanguage = faLanguage;
+  openedMenuResposive = false;
 
-    constructor(
-        private translate: TranslateService,
-        public router: Router) {
+  constructor(
+      private translate: TranslateService,
+      public router: Router) {
 
-        this.translate.addLangs(['en','es']);
-        this.translate.setDefaultLang('en');
-        const browserLang = this.translate.getBrowserLang();
-        this.translate.use(browserLang.match(/en|es/) ? browserLang : 'en');
-    }
+      this.translate.addLangs(['en','es']);
+      this.translate.setDefaultLang('en');
+      const browserLang = this.translate.getBrowserLang();
+      this.translate.use(browserLang.match(/en|es/) ? browserLang : 'en');
+  }
 
-    ngOnInit() {
-    } 
+  ngOnInit() {
+  }
 
-    ngOnDestroy(){
-    }
+  changeLang(languaje: string) {
+    this.translate.use(languaje);
+  }
+
+  ngOnDestroy(){
+  }
 }

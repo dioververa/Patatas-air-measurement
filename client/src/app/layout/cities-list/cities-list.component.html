@@ -6,33 +6,27 @@
       <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
 
-      <!-- Id Column -->
-      <ng-container matColumnDef="Id">
-        <th mat-header-cell *matHeaderCellDef> Id. </th>
-        <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
-      </ng-container>
-
       <!-- City Column -->
       <ng-container matColumnDef="city">
-        <th mat-header-cell *matHeaderCellDef> City </th>
+        <th mat-header-cell *matHeaderCellDef> {{ 'City' | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
       </ng-container>
 
       <!-- Alert Column -->
       <ng-container matColumnDef="alert">
-        <th mat-header-cell *matHeaderCellDef> Alert </th>
+        <th mat-header-cell *matHeaderCellDef> {{ 'Alert' | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.AlertDevicesCount}} </td>
       </ng-container>
 
       <!-- Warning Column -->
       <ng-container matColumnDef="warning">
-        <th mat-header-cell *matHeaderCellDef> Warning </th>
+        <th mat-header-cell *matHeaderCellDef> {{ 'Warning' | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.WarningDevicesCount}} </td>
       </ng-container>
 
       <!-- Normal Column -->
       <ng-container matColumnDef="normal">
-        <th mat-header-cell *matHeaderCellDef> Normal </th>
+        <th mat-header-cell *matHeaderCellDef> {{ 'Normal' | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.NormalDevicesCount}} </td>
       </ng-container>
 

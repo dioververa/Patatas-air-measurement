@@ -1,33 +1,46 @@
 <div class="container-device-summary">
-  <div class="row-table-device-summary">
-    <div class="box-device-summary" *ngFor="let device of devices; let j=index"
-    [style.border-color]="device.AirQualityColor">
-      <div class="row1-box-device-summary">
-        <div class="id-box-device-summary">
-          {{device.Id}}
-        </div>
-        <div class="wrapper-last-activity-box-device-summary">
-          <span class="indicator-air-quality-box-device-summary" 
-          [style.background]="device.AirQualityColor"></span>
-          <span class="last-activity-box-device-summary">{{device.LastActivity}}</span>
-        </div>
-        <div class="wrapper-temperature-box-device-summary">
-          <strong class="temperature-box-device-summary">{{device.Temperature}}</strong>
+
+  <div class="row-container-device-summary">
+
+    <div class="row-air-quality-device-summary">
+      <h3>{{ 'Summary' | translate }}</h3>
+      <div class="flex-start">
+        <div class="box-air-quality-device-summary" *ngFor="let key of getKeys(AirQuality); let j=index">
+          <div class="flex-center-hv"><strong>{{AirQuality[key].title | translate }}</strong></div>
+          <div class="badge-air-quality-device-summary" [style.background]="AirQuality[key].color">{{AirQuality[key].count}}
+          </div>
         </div>
       </div>
-      <div class="row2-box-device-summary">
-        <div class="wrapper-name-city-box-device-summary">
-          <div class="name-box-device-summary">
-            <strong>{{device.Name}}</strong>
+    </div>
+    
+    <div class="row-device-summary flex-start">
+      <div class="box-device-summary" *ngFor="let device of devices; let j=index"
+        [style.border-color]="device.AirQualityColor">
+        <div class="row1-box-device-summary">
+          <div class="wrapper-id-box-device-summary flex-center-hv">
+            <span class="id-box-device-summary">{{device.Id}}</span>
+            <span class="indicator-air-quality-box-device-summary" [style.background]="device.AirQualityColor"></span>
+            <small class="last-activity-box-device-summary">{{device.LastActivity}}</small>
           </div>
-          <div class="city-box-device-summary">
-            {{device.NameCity}}
+          <div class="wrapper-temperature-box-device-summary">
+            <strong class="temperature-box-device-summary">{{device.Temperature}}</strong>
           </div>
         </div>
-        <div class="storm-level-box-device-summary">
-          <fa-icon [icon]="device.StormLevelIcon"></fa-icon>
+        <div class="flex-beetwen">
+          <div class="wrapper-name-city-box-device-summary">
+            <div class="name-box-device-summary">
+              <strong>{{device.Name}}</strong>
+            </div>
+            <div class="city-box-device-summary">
+              {{device.NameCity}}
+            </div>
+          </div>
+          <div class="storm-level-box-device-summary">
+            <fa-icon [icon]="device.StormLevelIcon"></fa-icon>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>

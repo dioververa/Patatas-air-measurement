@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTableModule } from '@angular/material/table'
 import { DeviceSummaryRoutingModule } from './device-summary-routing.module';
 import { DeviceSummaryComponent } from './device-summary.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { DeviceSummaryComponent } from './device-summary.component';
   imports: [
     CommonModule,
     DeviceSummaryRoutingModule,
-    MatTableModule
+    FontAwesomeModule,
+    TranslateModule
   ]
 })
 export class DeviceSummaryLazyModule { }

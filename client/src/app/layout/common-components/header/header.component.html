@@ -10,16 +10,29 @@
     <div class="options">
 
       <a class="item-option" [routerLink]="['/cities-list']" routerLinkActive="active" >
-        <span>Cities List</span>
+        <span>{{ 'Cities List' | translate }}</span>
       </a>
 
       <a class="item-option" [routerLink]="['/device-summary']" routerLinkActive="active">
-        <span>Devices Summary</span>
+        <span>{{ 'Devices Summary' | translate }}</span>
       </a>
 
     </div>
 
     <div class="spacer"></div>
+
+    <button mat-icon-button [matMenuTriggerFor]="toolbarLangMenu">
+      <fa-icon [icon]="faLanguage"></fa-icon>
+    </button>
+    <mat-menu #toolbarLangMenu="matMenu" yPosition="above">
+    
+      <button mat-menu-item (click)="changeLang('en')">
+        <span>{{ 'English' | translate }}</span>
+      </button>
+      <button mat-menu-item (click)="changeLang('es')">
+        <span>{{ 'Spanish' | translate }}</span>
+      </button>
+    </mat-menu>
   </div>
 
   <div class="options-menu-responsive" [ngStyle]="{'display': openedMenuResposive == true ? 'flex':'none'}">

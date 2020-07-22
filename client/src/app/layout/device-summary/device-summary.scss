@@ -1,16 +1,71 @@
 $container-margin: 100px;
 
+.flex-start {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.flex-center-hv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-beetwen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .container-device-summary {
-	display: flex;
-	width: 100%;
-  margin: $container-margin auto;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
   background-color: #eee;
+}
+
+.row-container-device-summary {
+	width: 90%;
+  margin: $container-margin auto;
   
-  .row-table-device-summary{
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
+  .row-air-quality-device-summary {
+    width: calc(100% - 40px);
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+
+    .box-air-quality-device-summary {
+      min-width: 80px;
+      width: 200px;
+      margin: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      box-shadow: rgba(27, 20, 65, 0.1) 0px 10px 20px 0px;
+      background-color: #eee;
+      padding: 10px;
+
+      .badge-air-quality-device-summary {
+        @extend .flex-center-hv;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 1.2rem;
+        max-width: 60px;
+        margin: auto;
+      }
+    }
+  }
+
+  .row-device-summary{
+    width: calc(100% - 40px);
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
 
     .box-device-summary {
       min-width: 200px;
@@ -19,22 +74,32 @@ $container-margin: 100px;
       cursor: pointer;
       transition: 0.3s;
       position: relative;
-      border: 1px solid #fff;
-      border-radius: 4px;
+      border: 2px solid #fff;
+      border-radius: 6px;
       box-shadow: rgba(27, 20, 65, 0.1) 0px 10px 20px 0px;
       background-color: #fff;
       padding: 10px;
 
       .row1-box-device-summary {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+        @extend .flex-beetwen;
+        margin-bottom: 10px;
 
-      .row2-box-device-summary {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        .id-box-device-summary {
+          padding: 2px 4px;
+          color: #000;
+          background-color: #eee;
+          border-radius: 20px;
+          font-size: 0.8rem;
+        }
+
+        .last-activity-box-device-summary {
+          color: rgb(192, 189, 189);
+        }
+
+        .temperature-box-device-summary {
+          font-size: 1.8rem;
+          font-weight: 400;
+        }
       }
     }
   }
@@ -49,10 +114,10 @@ $container-margin: 100px;
 
 .indicator-air-quality-box-device-summary {
   border-radius: 50%;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   display: inline-block;
-  margin: auto;
+  margin: auto 10px;
   margin-right: 10px;
 }
 

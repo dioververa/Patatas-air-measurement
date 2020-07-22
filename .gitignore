@@ -4,6 +4,7 @@
 /client/dist
 /client/tmp
 /client/out-tsc
+/dist
 
 # compiled output
 /dbdata_dev
